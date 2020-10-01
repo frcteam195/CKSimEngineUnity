@@ -5,19 +5,33 @@ using UnityEngine.UI;
 
 public class Test : MonoBehaviour
 {
+    public string LatestTopic, LatestData;
+
     public Text TextObject;
 
     void Start()
     {
-        Debug.Log("Starting test...");
-        Debug.Log(SimEngine.FooFunction());
+
+        UnityEngine.Debug.Log("Starting test...");
 
         TextObject = GameObject.Find("Text").GetComponent<Text>();
-        TextObject.text = SimEngine.FooFunction();
+
+        SimEngine.InitializeSockets();
     }
 
     void Update()
     {
+        bool Success = SimEngine.ReceiveControlMessage(out LatestTopic, out LatestData);
 
+        if (Success)
+        {
+            TextObject.text = LatestData;
+        }    
+    }
+
+    void OnApplicationQuit()
+    {
+        SimEngine.DisposeSockets();
+        Debug.Log("Application ending after " + Time.time + " seconds.");
     }
 }
