@@ -394,6 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 608350f757460aa4a9a5655030fdc528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LatestTopic: 
+  LatestData: 
   TextObject: {fileID: 0}
 --- !u!1 &1893912269
 GameObject:

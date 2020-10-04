@@ -105,7 +105,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libzmq-v142-mt-4_3_3.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libzmq-v142-mt-4_3_3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)CKlibzmq\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -128,7 +128,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libzmq-v142-mt-4_3_3.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libzmq-v142-mt-4_3_3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)CKlibzmq\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -147,7 +147,7 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libzmq-v142-mt-4_3_3.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libzmq-v142-mt-4_3_3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)CKlibzmq\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
@@ -170,7 +170,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableUAC>false</EnableUAC>
-      <AdditionalDependencies>libzmq-v142-mt-4_3_3.dll;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libzmq-v142-mt-4_3_3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)CKlibzmq\bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
