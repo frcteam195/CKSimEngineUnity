@@ -37,7 +37,8 @@ static void reinitialize_replyer()
 {
 	zmq_close(replyer_socket);
 	replyer_socket = NULL;
-	replyer_socket = zmq_socket(robosim_zmq_context, ZMQ_PUB);
+	replyer_socket = zmq_socket(robosim_zmq_context, ZMQ_SUB);
+	zmq_setsockopt(replyer_socket, ZMQ_SUBSCRIBE, "", 0);
 	int rc = zmq_bind(replyer_socket, "tcp://*:10501");
 	if (rc <= -1)
 	{
