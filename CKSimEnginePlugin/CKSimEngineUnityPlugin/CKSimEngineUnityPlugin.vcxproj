@@ -176,9 +176,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="RoboSim.cpp" />
     <ClCompile Include="zmqInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="RoboSim.h" />
     <ClInclude Include="zmqInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

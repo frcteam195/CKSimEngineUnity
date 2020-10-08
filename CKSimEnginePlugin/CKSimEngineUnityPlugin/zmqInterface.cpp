@@ -1,5 +1,3 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
-
 #include "zmqInterface.h"
 #define ZMQ_STATIC
 #include "zmq.h"
