@@ -37,8 +37,7 @@ static void reinitialize_replyer()
 {
 	zmq_close(replyer_socket);
 	replyer_socket = NULL;
-	replyer_socket = zmq_socket(robosim_zmq_context, ZMQ_SUB);
-	zmq_setsockopt(replyer_socket, ZMQ_SUBSCRIBE, "", 0);
+	replyer_socket = zmq_socket(robosim_zmq_context, ZMQ_REP);
 	int rc = zmq_bind(replyer_socket, "tcp://*:10501");
 	if (rc <= -1)
 	{
@@ -60,7 +59,7 @@ void robosim::zmq_interface::step()
 
 	if (publisher_socket != NULL)
 	{
-		static StatusMessage robosimStatus;
+		StatusMessage robosimStatus;
 		
 		{
 			const std::lock_guard<std::mutex> lock(guard_mutex);
@@ -114,7 +113,7 @@ void robosim::zmq_interface::step()
 			reinitialize_publisher();
 	}
 
-	if (replyer_socket == NULL)
+	if (replyer_socket != NULL)
 	{
 		static char replyer_buffer[16000];
 
