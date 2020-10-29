@@ -21,6 +21,9 @@ public class Test : MonoBehaviour
     [DllImport("CKSimEngineUnityPlugin")]
     private static extern float robosim_get_motor(int motor_id);
 
+    [DllImport("CKSimEngineUnityPlugin")]
+    private static extern void robosim_set_encoder(int encoder_id, float value);
+
     void Start()
     {
         Debug.Log("Starting the application...");
@@ -34,10 +37,11 @@ public class Test : MonoBehaviour
         // Step the ZMQ interface to receive the latest motor data.
         robosim_zmq_interface_step();
 
-        // Show the latest motor values in the text object.
+        // Show the latest motor values in the text object and reuse those values for the encoders.
         for(int i = 0; i < 6; i++)
         {
             GameObject.Find("Motor" + i + "Value").GetComponent<Text>().text = robosim_get_motor(i).ToString();
+            robosim_set_encoder(i, robosim_get_motor(i));
         }
     }
 
